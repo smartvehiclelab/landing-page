@@ -80,8 +80,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (logoBtn) {
     logoBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (
+        window.location.pathname === "/" ||
+        window.location.pathname === "" ||
+        window.location.pathname.endsWith("/index.html")
+      ) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
     });
   }
 
@@ -119,26 +125,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     animated.forEach((el) => el.classList.add("is-visible"));
-    return;
+  } else {
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0, rootMargin: "80px 0px" }
+    );
+
+    animated.forEach((el) => {
+      if (el.getBoundingClientRect().top < window.innerHeight) {
+        el.classList.add("is-visible");
+      } else {
+        observer.observe(el);
+      }
+    });
   }
 
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          obs.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0, rootMargin: "80px 0px" }
-  );
-
-  animated.forEach((el) => {
-    if (el.getBoundingClientRect().top < window.innerHeight) {
-      el.classList.add("is-visible");
-    } else {
-      observer.observe(el);
-    }
-  });
+  // PWA Service Worker Registration
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/sw.js").catch(() => {});
+    });
+  }
 });

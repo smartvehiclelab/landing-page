@@ -41,6 +41,18 @@
   Content-Type: text/plain; charset=utf-8
   Cache-Control: public, max-age=86400, must-revalidate
 
+# Progressive Web App Manifest & Service Worker
+/site.webmanifest
+  Access-Control-Allow-Origin: *
+  Content-Type: application/manifest+json; charset=utf-8
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/sw.js
+  Access-Control-Allow-Origin: *
+  Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=0, must-revalidate
+
+
 # Global security headers for all responses
 /*
   X-Content-Type-Options: nosniff

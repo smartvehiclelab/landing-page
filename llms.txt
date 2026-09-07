@@ -9,7 +9,10 @@
 - **GitHub Organization:** [https://github.com/yoloprojekat](https://github.com/yoloprojekat)
 - **Central Landing Page Repository:** [https://github.com/yoloprojekat/landing-page](https://github.com/yoloprojekat/landing-page)
 - **AI Agent Manifest:** [https://yoloprojekat.com/agents.txt](https://yoloprojekat.com/agents.txt)
+- **Author & Colophon:** [https://yoloprojekat.com/humans.txt](https://yoloprojekat.com/humans.txt)
+- **Web App Manifest:** [https://yoloprojekat.com/site.webmanifest](https://yoloprojekat.com/site.webmanifest)
 - **Security Policy (RFC 9116 / Cloudflare):** [https://yoloprojekat.com/.well-known/security.txt](https://yoloprojekat.com/.well-known/security.txt)
+
 
 ## Ecosystem Repositories
 

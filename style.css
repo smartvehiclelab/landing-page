@@ -1006,8 +1006,10 @@ section {
   .gallery-card,
   .nav-item::after,
   .logo-ring,
-  .hamburger span {
+  .hamburger span,
+  .error-pulse-dot {
     transition: none;
+    animation: none;
   }
   .animate-fade-up,
   .animate-fade-right,
@@ -1016,3 +1018,201 @@ section {
     transform: none;
   }
 }
+
+/* 404 Error Page & Telemetry Base */
+.error-section {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 130px 24px 60px;
+}
+
+.error-card {
+  max-width: 680px;
+  width: 100%;
+  text-align: center;
+  padding: 56px 40px;
+  background: var(--card-bg-glass);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.error-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 50px;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.error-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 10px var(--primary);
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+}
+
+.error-code {
+  font-size: clamp(5rem, 15vw, 8.5rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -2px;
+  margin: 0 0 20px;
+  background: linear-gradient(
+    135deg,
+    var(--text-main) 20%,
+    var(--primary) 70%,
+    var(--primary-high) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.error-title {
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0 0 14px;
+}
+
+.error-desc {
+  color: var(--text-dim-high);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 0 auto 32px;
+}
+
+.error-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary);
+  color: #ffffff;
+  padding: 12px 26px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+:root[data-theme="light"] .btn-primary {
+  background: var(--primary-high);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px var(--primary);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--glass-bg);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.error-telemetry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px dashed var(--border);
+  text-align: left;
+}
+
+.telemetry-item {
+  padding: 10px 14px;
+  background: rgba(15, 23, 42, 0.04);
+  border-radius: 10px;
+  border: 1px solid var(--glass-border);
+}
+
+:root[data-theme="dark"] .telemetry-item {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.telemetry-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.telemetry-value {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-main);
+  font-family: monospace;
+}
+
+@media (max-width: 640px) {
+  .error-card {
+    padding: 40px 20px;
+  }
+  .error-telemetry-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+

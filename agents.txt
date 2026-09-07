@@ -19,9 +19,12 @@ Permissions: public-content-read
 Rate-Limit: 10 req/sec
 
 # Related Specifications & Knowledge Resources
+Humans-Txt: https://yoloprojekat.com/humans.txt
+Web-Manifest: https://yoloprojekat.com/site.webmanifest
 LLMs-Txt: https://yoloprojekat.com/llms.txt
 Security-Txt: https://yoloprojekat.com/.well-known/security.txt
 Sitemap: https://yoloprojekat.com/sitemap.xml
 Coding-Guidelines: https://yoloprojekat.com/AGENTS.md
 Repository: https://github.com/yoloprojekat/landing-page
 Organization: https://github.com/yoloprojekat
+

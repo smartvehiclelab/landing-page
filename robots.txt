@@ -4,6 +4,10 @@ Allow: /
 # Security Vulnerability Disclosure (RFC 9116 / Cloudflare)
 # https://yoloprojekat.com/.well-known/security.txt
 
+# Author & Colophon Manifest
+# https://yoloprojekat.com/humans.txt
+
+
 # Machine-Readable AI & LLM Specifications
 # LLM Knowledge Spec: https://yoloprojekat.com/llms.txt
 # AI Agents Manifest: https://yoloprojekat.com/agents.txt
