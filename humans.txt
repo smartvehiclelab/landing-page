@@ -2,7 +2,7 @@
   Creator & Lead Developer: Danilo Stoletović
   Website: https://danilostoletovic.com/
   GitHub: https://github.com/danilostoletovic
-  Contact: danilo.stoletovic@outlook.com
+  Contact: contact@danilostoletovic.com
   Location: Niš, Serbia
 
   Mentor: Predrag Šubarević

@@ -592,6 +592,26 @@ section {
   font-size: 0.9rem;
 }
 
+.card-footer-link,
+.card-footer-high a {
+  color: var(--primary-high);
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.card-footer-link:hover,
+.card-footer-link:focus-visible,
+.card-footer-high a:hover,
+.card-footer-high a:focus-visible {
+  text-decoration: underline;
+  gap: 8px;
+}
+
 /* Gallery Component */
 .gallery-card {
   overflow: hidden;
@@ -759,7 +779,8 @@ section {
 
 .footer-author-link:hover,
 .footer-author-link:focus-visible {
-  color: var(--primary);
+  color: var(--text-dim-high);
+  text-decoration: none;
 }
 
 .author-website-line {
@@ -769,11 +790,12 @@ section {
   flex-wrap: wrap;
 }
 
+.author-website-line a,
 .footer-website-link {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  color: var(--primary);
+  color: var(--text-main);
   font-weight: 700;
   text-decoration: none;
   transition:
@@ -781,19 +803,22 @@ section {
     transform 0.2s ease;
 }
 
+.author-website-line a:hover,
+.author-website-line a:focus-visible,
 .footer-website-link:hover,
 .footer-website-link:focus-visible {
-  color: var(--primary-high);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  color: var(--text-dim-high);
+  text-decoration: none;
   transform: translateX(2px);
 }
 
+.author-website-line a .external-icon,
 .footer-website-link .external-icon {
   font-size: 0.85em;
   transition: transform 0.2s ease;
 }
 
+.author-website-line a:hover .external-icon,
 .footer-website-link:hover .external-icon {
   transform: translate(2px, -2px);
 }
