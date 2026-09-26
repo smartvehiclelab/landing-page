@@ -1,12 +1,12 @@
 {
   "name": "Smart Vehicle | Autonomous Edge AI Platform",
   "short_name": "Smart Vehicle",
-  "description": "Open-source educational platform for Edge AI and computer vision research powered by Raspberry Pi 5.",
+  "description": "Open-source Raspberry Pi robotics with YOLO vision, live video, and an Android control station.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#030712",
-  "theme_color": "#030712",
+  "background_color": "#f5f2e8",
+  "theme_color": "#f5f2e8",
   "orientation": "portrait-primary",
   "lang": "en",
   "categories": [
@@ -40,12 +40,6 @@
       "purpose": "maskable"
     },
     {
-      "src": "assets/icon.svg",
-      "sizes": "512x512",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    },
-    {
       "src": "assets/favicon.png",
       "sizes": "32x32",
       "type": "image/png"
@@ -57,28 +51,48 @@
       "short_name": "Overview",
       "description": "Platform architecture and core objectives",
       "url": "/#intro",
-      "icons": [{ "src": "assets/icon-192.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "assets/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "Hardware Specs",
       "short_name": "Hardware",
       "description": "Raspberry Pi 5 and dual H-bridge motor drivers",
       "url": "/#hardware",
-      "icons": [{ "src": "assets/icon-192.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "assets/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "Software Logic",
       "short_name": "Software",
       "description": "YOLO computer vision and Docker microservices",
       "url": "/#software-logic",
-      "icons": [{ "src": "assets/icon-192.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "assets/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "Ecosystem",
       "short_name": "Ecosystem",
       "description": "Client applications and open-source repositories",
       "url": "/#projects",
-      "icons": [{ "src": "assets/icon-192.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "assets/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
     }
   ]
 }

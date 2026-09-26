@@ -1,1000 +1,410 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#030712" />
-    <title>Smart Vehicle | Autonomous Edge AI Platform</title>
-    <meta
-      name="description"
-      content="Open-source educational platform for Edge AI and computer vision research powered by Raspberry Pi 5. Awarded 4th place and Special Award at the 10th Galaksija Cup."
-    />
-    <meta
-      name="keywords"
-      content="Smart Vehicle, Edge AI, Raspberry Pi 5, YOLO, Computer Vision, Autonomous Robotics, Docker, Open Source, STEM"
-    />
-    <meta name="author" content="Danilo Stoletović" />
-    <link rel="author" href="https://danilostoletovic.com" />
-    <meta name="robots" content="index, follow" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://yoloprojekat.com/" />
-    <meta property="og:title" content="Smart Vehicle | Autonomous Edge AI Platform" />
-    <meta
-      property="og:description"
-      content="Open-source educational platform for Edge AI and computer vision research powered by Raspberry Pi 5."
-    />
-    <meta property="og:image" content="https://yoloprojekat.com/assets/nagrada.avif" />
-
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://yoloprojekat.com/" />
-    <meta name="twitter:title" content="Smart Vehicle | Autonomous Edge AI Platform" />
-    <meta
-      name="twitter:description"
-      content="Open-source educational platform for Edge AI and computer vision research powered by Raspberry Pi 5."
-    />
-    <meta name="twitter:image" content="https://yoloprojekat.com/assets/nagrada.avif" />
-
-    <link rel="canonical" href="https://yoloprojekat.com/" />
-    <link rel="icon" type="image/png" href="assets/favicon.png" />
-    <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-    <link rel="manifest" href="site.webmanifest" />
-    <link rel="author" href="humans.txt" />
-
-    <!-- PWA Settings -->
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="Smart Vehicle" />
-
-
-    <!-- Local Font Preloads -->
-    <link
-      rel="preload"
-      href="assets/fonts/plus-jakarta-sans-latin.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-      fetchpriority="high"
-    />
-    <link
-      rel="preload"
-      href="assets/fonts/plus-jakarta-sans-latin-ext.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-      fetchpriority="high"
-    />
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.min.css" />
-
-    <noscript>
-      <style>
-        .animate-fade-up,
-        .animate-fade-right,
-        .animate-fade-left {
-          opacity: 1 !important;
-          transform: none !important;
-        }
-      </style>
-    </noscript>
-
-    <!-- Anti-flicker Theme Script -->
-    <script>
-      (function () {
-        try {
-          var saved = localStorage.getItem("theme");
-          var pref = window.matchMedia("(prefers-color-scheme: dark)").matches
-            ? "dark"
-            : "light";
-          document.documentElement.setAttribute("data-theme", saved || pref);
-        } catch (e) {}
-      })();
-    </script>
-    <script src="script.min.js" defer></script>
-
-    <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": "Smart Vehicle: Autonomous Edge AI Platform on Raspberry Pi 5",
-        "description": "An open-source educational platform for Edge AI and computer vision research powered by Raspberry Pi 5, featuring YOLO detection, Docker microservices, and Mecanum drive.",
-        "author": {
-          "@type": "Person",
-          "name": "Danilo Stoletović",
-          "url": "https://danilostoletovic.com"
-        },
-        "publisher": {
-          "@type": "EducationalOrganization",
-          "name": "ETŠ Nikola Tesla Niš"
-        },
-        "url": "https://yoloprojekat.com/",
-        "image": "https://yoloprojekat.com/assets/nagrada.avif"
-      }
-    </script>
-  </head>
-
-  <body>
-    <div
-      id="menu-overlay"
-      class="menu-overlay"
-      aria-label="Close menu"
-      hidden
-    ></div>
-
-    <header id="navbar" class="navbar">
-      <div class="nav-container">
-        <a href="#hero" class="logo" id="logo-btn" aria-label="Return to top">
-          <span class="logo-ring"></span>
-          <span class="logo-text">
-            <span class="logo-main">SMART</span>
-            <span class="logo-sub">VEHICLE</span>
-          </span>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f5f2e8" />
+<title>SmartVehicle | Open-source robotics</title>
+<meta
+name="description"
+content="A Raspberry Pi vehicle with YOLO vision, live video, and an Android control station. Explore the hardware, architecture, and open-source code."
+/>
+<meta
+name="keywords"
+content="Smart Vehicle, Edge AI, Raspberry Pi 5, YOLO, Computer Vision, Autonomous Robotics, Docker, Open Source, STEM"
+/>
+<meta name="author" content="Danilo Stoletović" />
+<link rel="author" href="https://danilostoletovic.com" />
+<meta name="robots" content="index, follow" />
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://smartvehicle.dev/" />
+<meta property="og:title" content="SmartVehicle | Open-source robotics" />
+<meta
+property="og:description"
+content="Open-source Raspberry Pi robotics with YOLO vision and an Android control station."
+/>
+<meta property="og:image" content="https://smartvehicle.dev/assets/vozilo.avif" />
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content="https://smartvehicle.dev/" />
+<meta name="twitter:title" content="SmartVehicle | Open-source robotics" />
+<meta
+name="twitter:description"
+content="Open-source Raspberry Pi robotics with YOLO vision and an Android control station."
+/>
+<meta name="twitter:image" content="https://smartvehicle.dev/assets/vozilo.avif" />
+<link rel="canonical" href="https://smartvehicle.dev/" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png?v=3" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=3" />
+<link rel="manifest" href="site.webmanifest" />
+<link rel="author" href="humans.txt" />
+<!-- PWA Settings -->
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Smart Vehicle" />
+<!-- Local Font Preloads -->
+<link
+rel="preload"
+href="assets/fonts/plus-jakarta-sans-latin.woff2"
+as="font"
+type="font/woff2"
+crossorigin
+fetchpriority="high"
+/>
+<link
+rel="preload"
+href="assets/fonts/plus-jakarta-sans-latin-ext.woff2"
+as="font"
+type="font/woff2"
+crossorigin
+fetchpriority="high"
+/>
+<link rel="preload" as="image" href="assets/vozilo.avif" fetchpriority="high" />
+<!-- Stylesheet -->
+<link rel="stylesheet" href="style.min.css" />
+<!-- Anti-flicker Theme Script -->
+<script>
+(function () {
+try {
+var saved = localStorage.getItem("theme");
+var pref = window.matchMedia("(prefers-color-scheme: dark)").matches
+? "dark"
+: "light";
+document.documentElement.setAttribute("data-theme", saved === "dark" || saved === "light" ? saved : pref);
+} catch (e) {}
+})();
+</script>
+<script src="script.min.js" defer>
+</script>
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "TechArticle",
+"headline": "Smart Vehicle: Autonomous Edge AI Platform on Raspberry Pi 5",
+"description": "An open-source educational platform for Edge AI and computer vision research powered by Raspberry Pi 5, featuring YOLO detection, Docker microservices, and Mecanum drive.",
+"author": {
+"@type": "Person",
+"name": "Danilo Stoletović",
+"url": "https://danilostoletovic.com"
+},
+"publisher": {
+"@type": "EducationalOrganization",
+"name": "ETŠ Nikola Tesla Niš"
+},
+"url": "https://smartvehicle.dev/",
+"image": "https://smartvehicle.dev/assets/vozilo.avif"
+}
+</script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="#hero" aria-label="SmartVehicle home">smartvehicle<span>.</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#intro">The project</a>
+      <a href="#software-logic">Engineering</a>
+      <a href="#projects">Source code ↗</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch color theme" hidden>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </header>
+  <main id="main-content">
+    <section id="hero" class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">SMART VEHICLE / OPEN-SOURCE ROBOTICS</p>
+        <h1 id="hero-title">Code that sees.<br>Hardware that <em>moves.</em>
+        </h1>
+        <p class="lead">A Raspberry Pi vehicle with computer vision, an Android control station, and a lot going on under the chassis.</p>
+        <p>SmartVehicle brings YOLO detection, live video, and motor control together in one open-source engineering project. Built to explore what happens when software leaves the screen.</p>
+        <div class="actions">
+          <a class="button" href="#software-logic">See how it works <span aria-hidden="true">↓</span>
+          </a>
+          <a class="text-link" href="https://github.com/smartvehiclelab">Explore the code ↗</a>
+        </div>
+        <p class="small-note">
+          <span class="status-dot" aria-hidden="true">
+          </span> Raspberry Pi 5 · Python · Kotlin · Docker</p>
+      </div>
+      <figure class="hero-figure">
+        <div class="figure-label">
+          <span>ON THE WORKBENCH</span>
+          <span>FIG. 01</span>
+        </div>
+        <a class="image-link" href="assets/vozilo.avif" aria-label="View full image: Smart Vehicle prototype with a blue enclosure and Mecanum wheels">
+          <img src="assets/vozilo.avif" alt="Smart Vehicle prototype with a blue enclosure and Mecanum wheels" width="800" height="1067" loading="lazy" decoding="async" fetchpriority="high">
         </a>
-
-        <nav class="nav-links" id="main-nav" aria-label="Main Navigation">
-          <ul class="nav-list">
-            <li>
-              <a href="#intro" class="nav-item">Overview</a>
-            </li>
-            <li>
-              <a href="#awards" class="nav-item">Awards</a>
-            </li>
-            <li>
-              <a href="#hardware" class="nav-item">Hardware</a>
-            </li>
-            <li>
-              <a href="#software-logic" class="nav-item">Software</a>
-            </li>
-            <li>
-              <a href="#projects" class="nav-item">Ecosystem</a>
-            </li>
-            <li>
-              <a href="#use-cases" class="nav-item">Applications</a>
-            </li>
-            <li>
-              <a href="#gallery" class="nav-item">Gallery</a>
-            </li>
-            <li>
-              <a href="#roadmap" class="nav-item">Roadmap</a>
-            </li>
-            <li>
-              <a href="#comparison" class="nav-item">Comparison</a>
-            </li>
-          </ul>
-
-          <div class="nav-actions">
-            <button
-              id="theme-toggle"
-              class="theme-toggle"
-              aria-label="Toggle theme"
-            >
-              <svg
-                id="theme-icon"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></svg>
-            </button>
-            <a
-              href="https://github.com/yoloprojekat"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="github-cta"
-              >GitHub</a
-            >
-          </div>
-        </nav>
-
-        <button
-          id="mobile-toggle"
-          class="mobile-toggle"
-          aria-label="Toggle navigation menu"
-          aria-expanded="false"
-          aria-controls="main-nav"
-        >
-          <span id="hamburger" class="hamburger">
-            <span class="line-top"></span>
-            <span class="line-mid"></span>
-            <span class="line-bot"></span>
-          </span>
-        </button>
+        <figcaption>
+          <span>From the bench to the floor.</span>
+          <span class="handwritten">Made to leave<br>the desk. ↗</span>
+        </figcaption>
+      </figure>
+    </section>
+    <div class="ticker wrap" aria-label="Project approach">
+      <span>CAMERA → COMPUTE → CONTROL</span>
+      <span>ON-DEVICE VISION. OPEN CODE. REAL-WORLD CONSTRAINTS.</span>
+    </div>
+    <section id="intro" class="wrap section">
+      <div class="section-heading">
+        <p class="eyebrow">01 / THE PROJECT</p>
+        <h2>A small vehicle.<br>A whole system to figure out.</h2>
+        <p>Not just an AI model on a board. The interesting work is getting vision, movement, networking, and a usable client to work together.</p>
       </div>
-    </header>
-
-    <main id="main-content">
-      <section id="hero" class="hero section-container">
-        <div class="hero-content">
-          <div class="logo-container" aria-hidden="true">
-            <span class="logo-main">SMART</span>
-            <span class="logo-sub">VEHICLE</span>
+      <div class="three-up">
+        <article>
+          <span class="index">01 — SEE</span>
+          <h3>Understand the camera feed.</h3>
+          <p>A Pi Camera supplies video to the Raspberry Pi. YOLO detects objects on the vehicle; the Android client handles text recognition with Google ML Kit.</p>
+        </article>
+        <article>
+          <span class="index">02 — MOVE</span>
+          <h3>Put the controls in your hand.</h3>
+          <p>The native Android app combines a live camera view, telemetry, and Mecanum drive controls. Four independently driven wheels let the platform move in multiple directions.</p>
+        </article>
+        <article>
+          <span class="index">03 — KEEP GOING</span>
+          <h3>Plan for the messy parts.</h3>
+          <p>Separate services keep heavy vision work away from motor control. A network watchdog provides a fallback hotspot when Wi-Fi disappears.</p>
+        </article>
+      </div>
+      <aside class="margin-note">An evolving robotics platform. Teleoperation and on-device vision are the foundation; more advanced autonomy is part of the roadmap.</aside>
+    </section>
+    <section id="software-logic" class="wrap section">
+      <div class="section-heading">
+        <p class="eyebrow">02 / ENGINEERING NOTES</p>
+        <h2>One vehicle.<br>Independent moving parts.</h2>
+        <p>The first prototype coupled vision and motor control. When inference got busy, control waited. That constraint shaped the architecture.</p>
+      </div>
+      <div class="architecture">
+        <div class="flow" aria-label="System architecture">
+          <div class="flow-node">
+            <span class="eyebrow">INPUT</span>
+            <h3>Pi Camera v2</h3>
+            <p>Video capture · MIPI CSI-2</p>
           </div>
-          <h1 class="gradient-text">Autonomous Edge AI Vehicle</h1>
-          <p class="hero-desc">
-            An open-source hardware and software platform for the practical deployment
-            and research of on-device Edge AI computer vision on Raspberry Pi 5 architecture.
-          </p>
-          <div class="badges">
-            <span class="high-contrast-badge"
-              >🏆 4th Place & Special Award — 10th Galaksija Cup</span
-            >
-            <span class="high-badge-outline">Educational Platform</span>
-            <span class="high-badge-outline">YOLO & ML OCR</span>
-            <span class="high-badge-outline">Docker Ecosystem</span>
+          <div class="flow-arrow" aria-hidden="true">↓</div>
+          <div class="flow-node accent-node">
+            <span class="eyebrow">ON THE VEHICLE</span>
+            <h3>Raspberry Pi 5</h3>
+            <p>YOLO vision · Python services · Docker</p>
+            <div class="flow-split">
+              <span>Video stream</span>
+              <span>Motor control</span>
+            </div>
           </div>
-        </div>
-      </section>
-
-      <section id="awards" class="section-container">
-        <header class="section-header animate-fade-up">
-          <h2 class="section-title">Competition Success & Recognition</h2>
-          <p class="section-subtitle">
-            National STEM and robotics innovation championship
-          </p>
-        </header>
-
-        <div class="presentation-grid">
-          <div class="image-container animate-fade-right">
-            <figure class="img-wrapper">
-              <img
-                src="assets/nagrada.avif"
-                alt="Awards and certificates from the 10th Galaksija Cup"
-                class="hardware-img"
-                width="1000"
-                height="707"
-                decoding="async"
-                loading="lazy"
-                sizes="(max-width: 900px) calc(100vw - 88px), min(640px, 52vw)"
-              />
-              <figcaption class="caption">
-                Figure 1: 4th Place Certificate and Special Award for Outstanding Achievement at the 10th Galaksija Cup
-              </figcaption>
-            </figure>
-          </div>
-          <div class="specs-card animate-fade-left">
-            <article class="spec-item">
-              <strong class="text-primary-high">About the 10th Galaksija Cup</strong>
-              <p>
-                The Galaksija Cup is Serbia's premier national competition for electrical
-                engineering and computer science students in robotics, electronics, and software
-                innovation, organized by the Association of Electrical Engineering Schools of
-                Serbia (ZETŠS) and the Nordeus Foundation. Its jubilee 10th edition gathered
-                the top secondary school STEM finalists nationwide.
-              </p>
-            </article>
-            <article class="spec-item">
-              <strong class="text-primary-high"
-                >4th Place & Special Award Won</strong
-              >
-              <p>
-                The <strong>Smart Vehicle</strong> project earned <strong>4th place overall</strong>
-                in a competitive field of national finalists, accompanied by a
-                <strong>Special Award for Outstanding Achievement</strong>. The evaluation jury
-                specifically recognized the decoupled modular architecture, real-time on-device
-                Edge AI inference, and containerized deployment.
-              </p>
-            </article>
+          <div class="flow-arrow" aria-hidden="true">↕</div>
+          <div class="flow-node">
+            <span class="eyebrow">IN YOUR HAND</span>
+            <h3>Android control station</h3>
+            <p>Live view · Drive commands · Telemetry · OCR</p>
           </div>
         </div>
-      </section>
-
-      <section id="intro" class="section-container">
-        <header class="section-header animate-fade-up">
-          <h2 class="section-title">Motivation & Concept</h2>
-          <p class="section-subtitle">
-            Bridging theoretical foundations with real-world engineering challenges
-          </p>
-        </header>
-        <div class="modern-grid">
-          <article class="modern-card interactive animate-fade-up delay-1">
-            <div class="card-content">
-              <div class="card-top">
-                <span class="modern-icon" aria-hidden="true">🎯</span>
-                <span class="tech-pill-high">Challenge</span>
-              </div>
-              <h3>The Educational Gap</h3>
-              <p>
-                Traditional computer science education frequently emphasizes theoretical
-                algorithms in isolated software sandboxes. Students often miss hands-on exposure
-                to physical hardware where they must manage dynamic real-world variability,
-                signal latency, and constrained memory budgets.
-              </p>
-            </div>
+        <div class="engineering-notes">
+          <article>
+            <span class="index">A / DECOUPLE THE WORK</span>
+            <h3>Vision shouldn’t block movement.</h3>
+            <p>Multithreaded pipelines and Docker services separate camera processing, inference, and control. The goal is to keep a busy model from holding up the rest of the system.</p>
           </article>
-
-          <article
-            class="modern-card interactive featured-card animate-fade-up delay-2"
-          >
-            <div class="card-content">
-              <div class="card-top">
-                <span class="modern-icon" aria-hidden="true">⚙️</span>
-                <span class="tech-pill-high primary-pill">Approach</span>
-              </div>
-              <h3>Project Mission</h3>
-              <p>
-                Smart Vehicle provides a production-grade playground for real-time computer
-                vision and optical character recognition. By eliminating tedious driver and
-                dependency configuration hurdles, it enables direct exploration of robotics
-                motor control, data pipelines, and telemetry.
-              </p>
-            </div>
+          <article>
+            <span class="index">B / KEEP COMPUTE CLOSE</span>
+            <h3>Detection happens on the Pi.</h3>
+            <p>YOLO runs on the vehicle. Video travels to the Android client, where the operator can control the platform and use ML Kit to extract text.</p>
           </article>
-
-          <article class="modern-card interactive animate-fade-up delay-3">
-            <div class="card-content">
-              <div class="card-top">
-                <span class="modern-icon" aria-hidden="true">🛠️</span>
-                <span class="tech-pill-high">Engineering</span>
-              </div>
-              <h3>Architectural Solutions</h3>
-              <p>
-                During early development, coupling synchronous computer vision loops with
-                motor drivers caused blocking and latency spikes. This was resolved by
-                adopting decoupled Docker microservices, multithreaded pipelines, and an
-                automated watchdog script for self-healing network connectivity.
-              </p>
-            </div>
+          <article>
+            <span class="index">C / EXPECT A DROPPED CONNECTION</span>
+            <h3>Give the network a fallback.</h3>
+            <p>Smart Network monitors connectivity and brings up a local hotspot when the external network drops. Recovery is part of the design.</p>
           </article>
-        </div>
-      </section>
-
-      <section id="hardware" class="section-container">
-        <header class="section-header animate-fade-up">
-          <h2 class="section-title">Hardware Architecture</h2>
-          <p class="section-subtitle">
-            Overview of core physical modules and component interconnects
-          </p>
-        </header>
-        <div class="presentation-grid">
-          <div class="image-container animate-fade-right">
-            <figure class="img-wrapper">
-              <img
-                src="assets/hardverska-sema.avif"
-                alt="System block diagram connecting Raspberry Pi 5, sensors, and motor drivers"
-                class="hardware-img"
-                width="1000"
-                height="576"
-                decoding="async"
-                loading="lazy"
-                fetchpriority="low"
-                sizes="(max-width: 900px) calc(100vw - 88px), min(640px, 52vw)"
-              />
-              <figcaption class="caption">
-                Figure 2: Schematic block diagram of power regulation, sensor inputs, and motor outputs
-              </figcaption>
-            </figure>
-          </div>
-          <div class="specs-card animate-fade-left">
-            <article class="spec-item">
-              <strong class="text-primary-high">Power & Regulation</strong>
-              <p>
-                An XL4015 Step-down DC-DC buck converter (5.1V, 5A) guarantees stable,
-                uninterrupted voltage delivery to the Raspberry Pi 5 under heavy continuous
-                inference workloads.
-              </p>
-            </article>
-            <article class="spec-item">
-              <strong class="text-primary-high">Drivetrain & Mobility</strong>
-              <p>
-                Four independent DC geared motors paired with Mecanum wheels enable full
-                holonomic (omnidirectional) movement and millimeter-precision positioning.
-              </p>
-            </article>
-            <article class="spec-item">
-              <strong class="text-primary-high">Vision & Sensor Module</strong>
-              <p>
-                A Raspberry Pi Camera Module v2 (8MP) linked via dedicated MIPI CSI-2
-                hardware interface delivers high-framerate, low-latency video streaming.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="software-logic" class="section-container">
-        <header class="section-header animate-fade-up">
-          <h2 class="section-title">Software Architecture Layer</h2>
-          <p class="section-subtitle">
-            Decoupled software stack designed for real-time edge processing and autonomous control
-          </p>
-        </header>
-        <div class="modern-grid">
-          <article class="modern-card interactive animate-fade-up delay-1">
-            <div class="card-content">
-              <div class="card-top">
-                <span class="modern-icon" aria-hidden="true">🧠</span>
-                <span class="tech-pill-high">Detection</span>
-              </div>
-              <h3>YOLO AI Model</h3>
-              <p>
-                Optimized neural network inference pipeline processing 30 FPS camera feeds,
-                performing real-time roadway object detection (5–10 FPS) and continuous
-                multi-target tracking.
-              </p>
-            </div>
-          </article>
-
-          <article class="modern-card interactive animate-fade-up delay-2">
-            <div class="card-content">
-              <div class="card-top">
-                <span class="modern-icon" aria-hidden="true">👁️</span>
-                <span class="tech-pill-high">Optical Processing</span>
-              </div>
-              <h3>Google ML Kit OCR</h3>
-              <p>
-                On-the-fly optical text extraction from road signs and instructional markers,
-                featuring automatic rotation correction and execution of recognized commands.
-              </p>
-            </div>
-          </article>
-
-          <article class="modern-card interactive animate-fade-up delay-3">
-            <div class="card-content">
-              <div class="card-top">
-                <span class="modern-icon" aria-hidden="true">⚡</span>
-                <span class="tech-pill-high">Concurrency</span>
-              </div>
-              <h3>Multithreaded Pipeline</h3>
-              <p>
-                Asynchronous, parallel execution separating the camera acquisition thread,
-                AI inference worker, and hardware PWM motor duty cycles to avoid frame drops.
-              </p>
-            </div>
-          </article>
-
-          <article class="modern-card interactive animate-fade-up delay-3">
-            <div class="card-content">
-              <div class="card-top">
-                <span class="modern-icon" aria-hidden="true">🐳</span>
-                <span class="tech-pill-high">Containerization</span>
-              </div>
-              <h3>Dockerized Environment</h3>
-              <p>
-                Isolated microservices for the server and network watchdog eliminate host
-                OS dependency collisions and provide rapid error recovery.
-              </p>
-            </div>
-          </article>
-
-          <article class="modern-card interactive animate-fade-up delay-1">
-            <div class="card-content">
-              <div class="card-top">
-                <span class="modern-icon" aria-hidden="true">🚀</span>
-                <span class="tech-pill-high">Automation</span>
-              </div>
-              <h3>GitHub Actions CI/CD</h3>
-              <p>
-                Automated linting, unit testing, and container build validation on every push
-                ensure stability throughout continuous software development.
-              </p>
-            </div>
-          </article>
-
-          <article class="modern-card interactive animate-fade-up delay-2">
-            <div class="card-content">
-              <div class="card-top">
-                <span class="modern-icon" aria-hidden="true">☁️</span>
-                <span class="tech-pill-high">Distribution</span>
-              </div>
-              <h3>Docker Hub Registry</h3>
-              <p>
-                Centralized container registry hosting pre-built multi-architecture images
-                enables one-command deployments on any fresh Raspberry Pi device.
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="projects" class="section-container animate-fade-up">
-        <header class="section-header">
-          <h2 class="section-title">Modular Ecosystem Repositories</h2>
-          <p class="section-subtitle">
-            Source code is open-source and modularized into focused repositories
-          </p>
-        </header>
-        <div class="modern-grid">
-          <article class="modern-card interactive">
-            <div class="card-content">
-              <div class="card-top">
-                <span class="modern-icon" aria-hidden="true">⚙️</span>
-                <span class="tech-pill-high">Docker • Python</span>
-              </div>
-              <h3>RPi Server</h3>
-              <p>
-                Primary backend microservice. Manages GPIO peripherals, YOLO object
-                detection inference, and low-latency MJPEG video streaming.
-              </p>
-              <div class="card-footer-high">
-                <a
-                  href="https://github.com/yoloprojekat/rpi-server"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="card-footer-link"
-                  aria-label="View RPi Server repository on GitHub"
-                >
-                  View Repository →
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="modern-card interactive">
-            <div class="card-content">
-              <div class="card-top">
-                <span class="modern-icon" aria-hidden="true">📡</span>
-                <span class="tech-pill-high">Bash • Network</span>
-              </div>
-              <h3>Smart Network</h3>
-              <p>
-                Self-healing network daemon. Monitors Wi-Fi connectivity and automatically
-                activates a fallback local Wi-Fi Hotspot whenever external networks drop.
-              </p>
-              <div class="card-footer-high">
-                <a
-                  href="https://github.com/yoloprojekat/smart-network"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="card-footer-link"
-                  aria-label="View Smart Network repository on GitHub"
-                >
-                  View Repository →
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="modern-card interactive">
-            <div class="card-content">
-              <div class="card-top">
-                <span class="modern-icon" aria-hidden="true">🔄</span>
-                <span class="tech-pill-high">ONNX • TFLite</span>
-              </div>
-              <h3>Model Pipeline</h3>
-              <p>
-                Optimization, quantization (INT8/FP16), and export workflows transforming
-                YOLO models for hardware-accelerated edge inference.
-              </p>
-              <div class="card-footer-high">
-                <a
-                  href="https://github.com/yoloprojekat/model-pipeline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="card-footer-link"
-                  aria-label="View Model Pipeline repository on GitHub"
-                >
-                  View Repository →
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="modern-card interactive">
-            <div class="card-content">
-              <div class="card-top">
-                <span class="modern-icon" aria-hidden="true">📱</span>
-                <span class="tech-pill-high">Kotlin • Compose</span>
-              </div>
-              <h3>Android Client</h3>
-              <p>
-                Primary operator dashboard. Provides real-time Mecanum drive controls,
-                low-latency FPV video playback, and live telemetry overlay.
-              </p>
-              <div class="card-footer-high">
-                <a
-                  href="https://github.com/yoloprojekat/android-client"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="card-footer-link"
-                  aria-label="View Android Client repository on GitHub"
-                >
-                  View Repository →
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="modern-card interactive">
-            <div class="card-content">
-              <div class="card-top">
-                <span class="modern-icon" aria-hidden="true">🌐</span>
-                <span class="tech-pill-high">Next.js • React</span>
-              </div>
-              <h3>Web Dashboard</h3>
-              <p>
-                Modern web monitoring interface allowing remote vehicle telemetry inspection
-                and analytics directly within any web browser.
-              </p>
-              <div class="card-footer-high">
-                <a
-                  href="https://github.com/yoloprojekat/web-dashboard"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="card-footer-link"
-                  aria-label="View Web Dashboard repository on GitHub"
-                >
-                  View Repository →
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="modern-card interactive">
-            <div class="card-content">
-              <div class="card-top">
-                <span class="modern-icon" aria-hidden="true">💾</span>
-                <span class="tech-pill-high">Archive • Systemd</span>
-              </div>
-              <h3>RPi Server (Legacy)</h3>
-              <p>
-                Initial prototype backend based on bare-metal Linux systemd daemons and
-                native WebSockets messaging.
-              </p>
-              <div class="card-footer-high">
-                <a
-                  href="https://github.com/yoloprojekat/rpi-server-legacy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="card-footer-link"
-                  aria-label="View RPi Server (Legacy) repository on GitHub"
-                >
-                  View Repository →
-                </a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="use-cases" class="section-container">
-        <header class="section-header animate-fade-up">
-          <h2 class="section-title">Applications & Use Cases</h2>
-          <p class="section-subtitle">
-            From foundational STEM robotics education to real-world automation scenarios
-          </p>
-        </header>
-        <div class="modern-grid">
-          <article
-            class="modern-card interactive featured-card animate-fade-up delay-1"
-          >
-            <div class="card-content">
-              <div class="card-top">
-                <span class="modern-icon" aria-hidden="true">🎓</span>
-                <span class="tech-pill-high primary-pill">Primary Purpose</span>
-              </div>
-              <h3>Education & STEM R&D</h3>
-              <p>
-                An interactive learning platform for exploring edge computing, microservice
-                architecture, sensor fusion, and asynchronous embedded Python development.
-              </p>
-            </div>
-          </article>
-
-          <article class="modern-card interactive animate-fade-up delay-2">
-            <div class="card-content">
-              <div class="card-top">
-                <span class="modern-icon" aria-hidden="true">🏙️</span>
-                <span class="tech-pill-high">Smart Infrastructure</span>
-              </div>
-              <h3>Smart Cities & Traffic Analysis</h3>
-              <p>
-                Adaptable for vehicular flow monitoring, license plate extraction, roadway
-                obstruction alerting, and municipal street condition inspection.
-              </p>
-            </div>
-          </article>
-
-          <article class="modern-card interactive animate-fade-up delay-3">
-            <div class="card-content">
-              <div class="card-top">
-                <span class="modern-icon" aria-hidden="true">🏭</span>
-                <span class="tech-pill-high">Automation</span>
-              </div>
-              <h3>Industry 4.0 & Warehouse AGVs</h3>
-              <p>
-                Testbed for Automated Guided Vehicles (AGVs) navigating warehouse floors
-                through visual line-following, ArUco/QR markers, and dynamic obstacle evasion.
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="gallery" class="section-container">
-        <header class="section-header">
-          <h2 class="section-title">Project Gallery</h2>
-          <p class="section-subtitle">
-            Visual showcase of physical hardware, competitive accolades, and software interfaces
-          </p>
-        </header>
-        <div class="modern-grid">
-          <div class="gallery-card">
-            <div class="gallery-img-container">
-              <img
-                src="assets/nagrada.avif"
-                alt="Award certificate from the Galaksija Cup"
-                width="400"
-                height="220"
-                decoding="async"
-                loading="lazy"
-                fetchpriority="low"
-              />
-            </div>
-            <div class="gallery-info">
-              <p>4th Place & Special Award at the 10th Galaksija Cup</p>
-            </div>
-          </div>
-
-          <div class="gallery-card">
-            <div class="gallery-img-container">
-              <img
-                src="assets/vozilo.avif"
-                alt="Smart Vehicle physical chassis assembly"
-                width="400"
-                height="220"
-                decoding="async"
-                loading="lazy"
-                fetchpriority="low"
-              />
-            </div>
-            <div class="gallery-info">
-              <p>Physical chassis assembly featuring Mecanum drivetrain and sensor array</p>
-            </div>
-          </div>
-
-          <div class="gallery-card">
-            <div class="gallery-img-container">
-              <img
-                src="assets/ocr.avif"
-                alt="Android application user interface showing OCR text recognition"
-                width="400"
-                height="220"
-                decoding="async"
-                loading="lazy"
-                fetchpriority="low"
-              />
-            </div>
-            <div class="gallery-info">
-              <p>Mobile client interface showing live OCR text extraction</p>
-            </div>
-          </div>
-
-          <div class="gallery-card">
-            <div class="gallery-img-container">
-              <img
-                src="assets/yolo.avif"
-                alt="Real-time YOLO object detection display"
-                width="400"
-                height="220"
-                decoding="async"
-                loading="lazy"
-                fetchpriority="low"
-              />
-            </div>
-            <div class="gallery-info">
-              <p>Real-time YOLO object detection and bounding box telemetry stream</p>
-            </div>
-          </div>
-
-          <div class="gallery-card">
-            <div class="gallery-img-container">
-              <img
-                src="assets/docker log text.avif"
-                alt="Docker system logs on Raspberry Pi 5"
-                width="400"
-                height="220"
-                decoding="async"
-                loading="lazy"
-                fetchpriority="low"
-              />
-            </div>
-            <div class="gallery-info">
-              <p>Containerized system logs running on Raspberry Pi 5 under Docker</p>
-            </div>
-          </div>
-
-          <div class="gallery-card">
-            <div class="gallery-img-container">
-              <img
-                src="assets/htop.avif"
-                alt="System resource monitor showing CPU and memory utilization"
-                width="400"
-                height="220"
-                decoding="async"
-                loading="lazy"
-                fetchpriority="low"
-              />
-            </div>
-            <div class="gallery-info">
-              <p>Live resource monitor (htop) tracking CPU cores and memory footprint</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="roadmap" class="section-container">
-        <header class="section-header">
-          <h2 class="section-title">Project Development Roadmap</h2>
-          <p class="section-subtitle">
-            Chronological evolution from initial prototype to future autonomous milestones
-          </p>
-        </header>
-
-        <div class="roadmap-timeline">
-          <div class="roadmap-item completed">
-            <div class="roadmap-dot"></div>
-            <div class="roadmap-card">
-              <div class="phase-tag">Version 1.0</div>
-              <h3>Phase I: Prototype & Basic Control</h3>
-              <p>Fundamental verification of hardware and mechanics:</p>
-              <ul>
-                <li>
-                  <strong>Hardware:</strong> Chassis assembly and baseline 4WD differential drive.
-                </li>
-                <li>
-                  <strong>Communication:</strong> Manual teleoperation via static Wi-Fi hotspot.
-                </li>
-                <li>
-                  <strong>Video Stream:</strong> Direct FPV camera capture pipeline.
-                </li>
-                <li>
-                  <strong>Software:</strong> Early client prototype and synchronous Python scripts.
-                </li>
-                <li>
-                  <strong>AI Model:</strong> Initial feasibility benchmarking with YOLOv8.
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="roadmap-item active">
-            <div class="roadmap-dot"></div>
-            <div class="roadmap-card">
-              <div class="phase-tag">Version 2.0</div>
-              <h3>Phase II: Modular Architecture & Recognition</h3>
-              <p>
-                System stabilization, containerization, and competitive recognition:
-              </p>
-              <ul>
-                <li>
-                  <strong>Competitive Success:</strong> Won 4th place and Special Award at the 10th Galaksija Cup.
-                </li>
-                <li>
-                  <strong>Refactoring:</strong> Microservices architecture powered by Docker Compose.
-                </li>
-                <li>
-                  <strong>AI Vision:</strong> Multi-model pipeline featuring YOLO and Google ML Kit OCR.
-                </li>
-                <li>
-                  <strong>Network Reliability:</strong> Self-healing daemon with automatic fallback hotspot.
-                </li>
-                <li>
-                  <strong>Client App:</strong> Modern Jetpack Compose Android UI with low-latency streaming.
-                </li>
-                <li>
-                  <strong>Open Source:</strong> Publicly released on GitHub under the permissive MIT license.
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="roadmap-item future">
-            <div class="roadmap-dot"></div>
-            <div class="roadmap-card">
-              <div class="phase-tag">Version 3.0</div>
-              <h3>Phase III: Advanced Autonomy</h3>
-              <p>Expanding autonomous capabilities and curriculum adoption:</p>
-              <ul>
-                <li>
-                  <strong>Educational SDK:</strong> Block-based visual programming API for beginner STEM students.
-                </li>
-                <li>
-                  <strong>Sensor Fusion:</strong> Integration of 2D/3D LiDAR with SLAM mapping algorithms.
-                </li>
-                <li>
-                  <strong>Standardization:</strong> Comprehensive replication blueprints and open hardware schematics.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="comparison" class="section-container animate-fade-up">
-        <header class="section-header">
-          <h2 class="section-title">Comparison: Theory vs. Practice</h2>
-          <p class="section-subtitle">
-            Analyzing the contrast between traditional classroom learning and production-grade engineering
-          </p>
-        </header>
-
-        <div class="modern-grid">
-          <article class="modern-card interactive">
-            <div class="card-content">
-              <div class="card-top">
-                <span class="modern-icon" aria-hidden="true">📄</span>
-                <span class="tech-pill-high">Traditional Approach</span>
-              </div>
-              <h3>Dry Theory</h3>
-              <p>
-                Focus on memorizing syntax on paper without the ability to execute code,
-                diagnose runtime exceptions, or navigate physical hardware limitations.
-              </p>
-            </div>
-          </article>
-
-          <article class="modern-card interactive">
-            <div class="card-content">
-              <div class="card-top">
-                <span class="modern-icon" aria-hidden="true">⚠️</span>
-                <span class="tech-pill-high">Limitations</span>
-              </div>
-              <h3>Disconnected Sandbox</h3>
-              <p>
-                Solving artificial textbook problems isolated from network latency,
-                packet drops, CPU thermal throttling, and hardware memory ceilings.
-              </p>
-            </div>
-          </article>
-
-          <article class="modern-card interactive">
-            <div class="card-content">
-              <div class="card-top">
-                <span class="modern-icon" aria-hidden="true">⚙️</span>
-                <span class="tech-pill-high">Hands-On Engineering</span>
-              </div>
-              <h3>Production-Grade Systems</h3>
-              <p>
-                Accelerated engineering growth achieved through live problem solving,
-                Docker microservices, on-device Edge AI models, and open-source collaboration.
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer section-container">
-      <div class="footer-grid">
-        <div class="footer-left animate-fade-up">
-          <div class="logo-text">
-            <span class="logo-main">SMART</span>
-            <span class="logo-sub">VEHICLE</span>
-          </div>
-          <div class="footer-credits">
-            <p>
-              Author:
-              <strong>Danilo Stoletović</strong>
-            </p>
-            <p class="author-website-line">
-              Author Website:
-              <a
-                href="https://danilostoletovic.com"
-                class="footer-website-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span>danilostoletovic.com</span>
-                <span class="external-icon" aria-hidden="true">↗</span>
-              </a>
-            </p>
-            <p>Mentor: <strong>Predrag Šubarević</strong></p>
-            <p class="special-thanks">
-              Special thanks to former mentor: <strong>Dejan Batanjac</strong>
-            </p>
-            <p class="school-info">ETŠ „Nikola Tesla“ Niš • 2026</p>
-          </div>
         </div>
       </div>
-    </footer>
-  </body>
+    </section>
+    <section id="hardware" class="wrap section">
+      <div class="section-heading">
+        <p class="eyebrow">03 / UNDER THE CHASSIS</p>
+        <h2>Off-the-shelf parts.<br>Hands-on engineering.</h2>
+      </div>
+      <div class="hardware-grid">
+        <figure class="schematic">
+          <a class="image-link" href="assets/hardverska-sema.avif" aria-label="View full image: Hardware block diagram connecting power, Raspberry Pi, camera, and motor drivers">
+            <img src="assets/hardverska-sema.avif" alt="Hardware block diagram connecting power, Raspberry Pi, camera, and motor drivers" width="613" height="353" loading="lazy" decoding="async" fetchpriority="low">
+          </a>
+          <figcaption>FIG. 02 / Power, sensing, and movement — connected.</figcaption>
+        </figure>
+        <dl class="spec-list">
+          <div>
+            <dt>Compute</dt>
+            <dd>Raspberry Pi 5 · 8GB RAM</dd>
+          </div>
+          <div>
+            <dt>Camera</dt>
+            <dd>Pi Camera Module v2 · 8MP</dd>
+          </div>
+          <div>
+            <dt>Drive</dt>
+            <dd>4 DC geared motors · Mecanum wheels</dd>
+          </div>
+          <div>
+            <dt>Motor control</dt>
+            <dd>L298N H-bridge drivers</dd>
+          </div>
+          <div>
+            <dt>Power</dt>
+            <dd>XL4015 step-down converter · 5.1V / 5A</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+    <section id="gallery" class="wrap section">
+      <div class="section-heading">
+        <p class="eyebrow">04 / FROM THE BUILD</p>
+        <h2>Past the architecture diagram.</h2>
+        <p>Actual interfaces and system captures from the project. Open any image for a closer look.</p>
+      </div>
+      <div class="gallery">
+        <figure class="phone-shot">
+          <a class="image-link" href="assets/yolo.avif" aria-label="View full image: Android client showing YOLO object detection">
+            <img src="assets/yolo.avif" alt="Android client showing YOLO object detection" width="600" height="1327" loading="lazy" decoding="async" fetchpriority="low">
+          </a>
+          <figcaption>
+            <span class="index">01 / OBJECT DETECTION</span>What the vehicle sees.</figcaption>
+        </figure>
+        <figure class="phone-shot">
+          <a class="image-link" href="assets/ocr.avif" aria-label="View full image: Android client showing recognized text with ML Kit OCR">
+            <img src="assets/ocr.avif" alt="Android client showing recognized text with ML Kit OCR" width="600" height="1327" loading="lazy" decoding="async" fetchpriority="low">
+          </a>
+          <figcaption>
+            <span class="index">02 / TEXT RECOGNITION</span>Reading the world around it.</figcaption>
+        </figure>
+        <div class="system-shots">
+          <figure>
+            <a class="image-link" href="assets/docker log text.avif" aria-label="View full image: Docker service logs on the Raspberry Pi">
+              <img src="assets/docker log text.avif" alt="Docker service logs on the Raspberry Pi" width="600" height="387" loading="lazy" decoding="async" fetchpriority="low">
+            </a>
+            <figcaption>
+              <span class="index">03 / SERVICES</span>Under the hood, in the logs.</figcaption>
+          </figure>
+          <figure>
+            <a class="image-link" href="assets/htop.avif" aria-label="View full image: System monitor showing Raspberry Pi CPU and memory usage">
+              <img src="assets/htop.avif" alt="System monitor showing Raspberry Pi CPU and memory usage" width="600" height="396" loading="lazy" decoding="async" fetchpriority="low">
+            </a>
+            <figcaption>
+              <span class="index">04 / RESOURCES</span>Keeping an eye on the Pi.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section id="projects" class="wrap section">
+      <div class="section-heading">
+        <p class="eyebrow">05 / OPEN THE SOURCE</p>
+        <h2>No black box.<br>Follow the code.</h2>
+        <p>Start with the server and Android client, then explore the supporting pieces. Setup instructions live alongside the implementation in each repository.</p>
+      </div>
+      <div class="repo-list">
+        <a class="repo-row" href="https://github.com/smartvehiclelab/rpi-server">
+          <span class="index">01</span>
+          <div>
+            <span class="eyebrow">Python / Docker</span>
+            <h3>The vehicle’s backend</h3>
+            <p>GPIO control, YOLO inference, and MJPEG video streaming on the Raspberry Pi.</p>
+            <span class="repo-slug">rpi-server</span>
+          </div>
+          <span class="repo-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="repo-row" href="https://github.com/smartvehiclelab/android-client">
+          <span class="index">02</span>
+          <div>
+            <span class="eyebrow">Kotlin / Jetpack Compose</span>
+            <h3>The control station</h3>
+            <p>Drive the vehicle, watch its camera feed, inspect telemetry, and read text with ML Kit OCR.</p>
+            <span class="repo-slug">android-client</span>
+          </div>
+          <span class="repo-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="repo-row" href="https://github.com/smartvehiclelab/smart-network">
+          <span class="index">03</span>
+          <div>
+            <span class="eyebrow">Bash / Linux</span>
+            <h3>A way back online</h3>
+            <p>A network watchdog that creates a fallback Wi-Fi hotspot when the external network drops.</p>
+            <span class="repo-slug">smart-network</span>
+          </div>
+          <span class="repo-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="repo-row" href="https://github.com/smartvehiclelab/model-pipeline">
+          <span class="index">04</span>
+          <div>
+            <span class="eyebrow">ONNX / TFLite</span>
+            <h3>Models for the edge</h3>
+            <p>Export and quantization workflows for deploying YOLO models on constrained hardware.</p>
+            <span class="repo-slug">model-pipeline</span>
+          </div>
+          <span class="repo-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <div class="repo-footnote">
+        <p>More to explore: <a href="https://github.com/smartvehiclelab/web-dashboard">Web dashboard ↗</a> · <a href="https://github.com/smartvehiclelab/rpi-server-legacy">Original server prototype ↗</a>
+        </p>
+        <a class="text-link" href="https://github.com/smartvehiclelab/landing-page">This website’s source ↗</a>
+      </div>
+    </section>
+    <section id="awards" class="wrap section history">
+      <div>
+        <p class="eyebrow">06 / WHERE IT STARTED</p>
+        <h2>Built to learn.<br>Kept building.</h2>
+        <p>Smart Vehicle — originally <em>Pametno Vozilo</em> — grew out of hands-on robotics work at ETŠ “Nikola Tesla” in Niš. It earned <strong>4th place and a Special Award at the 10th Galaksija Cup</strong>.</p>
+        <p>The competition is part of its history. The open-source code and the engineering lessons are what carry it forward.</p>
+        <p class="credits">Created by <a href="https://danilostoletovic.com">Danilo Stoletović</a>.<br>Mentor: Predrag Šubarević.<br>With thanks to former mentor Dejan Batanjac.</p>
+      </div>
+      <figure class="award-figure">
+        <a class="image-link" href="assets/nagrada.avif" aria-label="View full image: Fourth-place certificate and Special Award from the 10th Galaksija Cup">
+          <img src="assets/nagrada.avif" alt="Fourth-place certificate and Special Award from the 10th Galaksija Cup" width="565" height="399" loading="lazy" decoding="async" fetchpriority="low">
+        </a>
+        <figcaption>FROM THE PROJECT ARCHIVE / 10TH GALAKSIJA CUP</figcaption>
+      </figure>
+    </section>
+    <section id="roadmap" class="wrap section">
+      <div class="section-heading">
+        <p class="eyebrow">07 / WORK IN PROGRESS</p>
+        <h2>A platform to keep building on.</h2>
+      </div>
+      <ol class="roadmap">
+        <li>
+          <span class="index">THE FIRST BUILD / V1</span>
+          <h3>Make it move.</h3>
+          <p>Chassis assembly, manual Wi-Fi control, a camera feed, and early YOLO experiments.</p>
+        </li>
+        <li>
+          <span class="index">THE FOUNDATION / V2</span>
+          <h3>Make the pieces work together.</h3>
+          <p>Docker services, a Compose Android client, YOLO and OCR, and fallback networking.</p>
+        </li>
+        <li>
+          <span class="index">FUTURE DIRECTIONS / V3</span>
+          <h3>Explore more autonomy.</h3>
+          <p>LiDAR and SLAM, accessible programming tools, and clearer replication guides. These are planned directions, not shipped capabilities.</p>
+        </li>
+      </ol>
+    </section>
+    <section id="use-cases" class="wrap section closing">
+      <p class="eyebrow">TAKE IT APART. UNDERSTAND IT. BUILD ON IT.</p>
+      <h2>Your next experiment<br>could have wheels.</h2>
+      <p>Explore the implementation, reproduce a part of the system, or bring an improvement back to the project. The repositories are the place to start.</p>
+      <div class="actions">
+        <a class="button" href="https://github.com/smartvehiclelab">Explore SmartVehicle on GitHub ↗</a>
+        <a class="text-link" href="https://danilostoletovic.com">Meet the person behind it ↗</a>
+      </div>
+      <p id="comparison" class="small-note">A practical starting point for studying computer vision, embedded control, and connected systems.</p>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <a class="wordmark" href="#hero">smartvehicle<span>.</span>
+    </a>
+    <p>Built by <a href="https://danilostoletovic.com">Danilo Stoletović ↗</a>
+      <br>Open source · MIT license · 2026</p>
+    <a href="#hero">Back to top ↑</a>
+  </footer>
+</body>
 </html>

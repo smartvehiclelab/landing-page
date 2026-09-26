@@ -4,26 +4,26 @@
 
 ## Key Resources
 
-- **Official Website:** [https://yoloprojekat.com/](https://yoloprojekat.com/)
+- **Official Website:** [https://smartvehicle.dev/](https://smartvehicle.dev/)
 - **Author Website:** [https://danilostoletovic.com/](https://danilostoletovic.com/)
-- **GitHub Organization:** [https://github.com/yoloprojekat](https://github.com/yoloprojekat)
-- **Central Landing Page Repository:** [https://github.com/yoloprojekat/landing-page](https://github.com/yoloprojekat/landing-page)
-- **AI Agent Manifest:** [https://yoloprojekat.com/agents.txt](https://yoloprojekat.com/agents.txt)
-- **Author & Colophon:** [https://yoloprojekat.com/humans.txt](https://yoloprojekat.com/humans.txt)
-- **Web App Manifest:** [https://yoloprojekat.com/site.webmanifest](https://yoloprojekat.com/site.webmanifest)
-- **Security Policy (RFC 9116 / Cloudflare):** [https://yoloprojekat.com/.well-known/security.txt](https://yoloprojekat.com/.well-known/security.txt)
+- **GitHub Organization:** [https://github.com/smartvehiclelab](https://github.com/smartvehiclelab)
+- **Central Landing Page Repository:** [https://github.com/smartvehiclelab/landing-page](https://github.com/smartvehiclelab/landing-page)
+- **AI Agent Manifest:** [https://smartvehicle.dev/agents.txt](https://smartvehicle.dev/agents.txt)
+- **Author & Colophon:** [https://smartvehicle.dev/humans.txt](https://smartvehicle.dev/humans.txt)
+- **Web App Manifest:** [https://smartvehicle.dev/site.webmanifest](https://smartvehicle.dev/site.webmanifest)
+- **Security Policy (RFC 9116 / Cloudflare):** [https://smartvehicle.dev/.well-known/security.txt](https://smartvehicle.dev/.well-known/security.txt)
 
 
 ## Ecosystem Repositories
 
 ### Core & Infrastructure
-- **RPi Server:** [https://github.com/yoloprojekat/rpi-server](https://github.com/yoloprojekat/rpi-server) — Containerized Python backend managing GPIO motor drivers, YOLO real-time object detection inference, and MJPEG video streaming.
-- **Smart Network:** [https://github.com/yoloprojekat/smart-network](https://github.com/yoloprojekat/smart-network) — Self-healing network daemon providing automatic fallback Wi-Fi Hotspot configuration for continuous operational connectivity.
-- **Model Pipeline:** [https://github.com/yoloprojekat/model-pipeline](https://github.com/yoloprojekat/model-pipeline) — Optimization, quantization (INT8/FP16), and export workflows converting YOLO models for hardware-accelerated edge inference on TFLite and ONNX.
+- **RPi Server:** [https://github.com/smartvehiclelab/rpi-server](https://github.com/smartvehiclelab/rpi-server) — Containerized Python backend managing GPIO motor drivers, YOLO real-time object detection inference, and MJPEG video streaming.
+- **Smart Network:** [https://github.com/smartvehiclelab/smart-network](https://github.com/smartvehiclelab/smart-network) — Self-healing network daemon providing automatic fallback Wi-Fi Hotspot configuration for continuous operational connectivity.
+- **Model Pipeline:** [https://github.com/smartvehiclelab/model-pipeline](https://github.com/smartvehiclelab/model-pipeline) — Optimization, quantization (INT8/FP16), and export workflows converting YOLO models for hardware-accelerated edge inference on TFLite and ONNX.
 
 ### Client & Monitoring Platforms
-- **Android Client:** [https://github.com/yoloprojekat/android-client](https://github.com/yoloprojekat/android-client) — Native Android teleoperation dashboard built with Jetpack Compose (Kotlin), featuring Google ML Kit OCR text detection and low-latency FPV video streaming.
-- **Web Dashboard:** [https://github.com/yoloprojekat/web-dashboard](https://github.com/yoloprojekat/web-dashboard) — Modern web interface allowing vehicle telemetry inspection and analytics directly in the browser.
+- **Android Client:** [https://github.com/smartvehiclelab/android-client](https://github.com/smartvehiclelab/android-client) — Native Android teleoperation dashboard built with Jetpack Compose (Kotlin), featuring Google ML Kit OCR text detection and low-latency FPV video streaming.
+- **Web Dashboard:** [https://github.com/smartvehiclelab/web-dashboard](https://github.com/smartvehiclelab/web-dashboard) — Modern web interface allowing vehicle telemetry inspection and analytics directly in the browser.
 
 ## Technical Specifications
 

@@ -1,10 +1,10 @@
 /**
  * Smart Vehicle (Pametno Vozilo) — Progressive Web App Service Worker
  * Zero runtime dependencies, high-performance offline shell & asset cache.
- * Cache Version: v1.0.0
+ * Cache Version: v2.1.0
  */
 
-const CACHE_NAME = "smart-vehicle-v1.0.0";
+const CACHE_NAME = "smart-vehicle-v2.1.0";
 
 const PRECACHE_ASSETS = [
   "/",
@@ -13,10 +13,10 @@ const PRECACHE_ASSETS = [
   "/style.min.css",
   "/script.min.js",
   "/site.webmanifest",
-  "/assets/favicon.png",
+  "/assets/favicon.png?v=3",
   "/assets/icon-192.png",
   "/assets/icon-512.png",
-  "/assets/apple-touch-icon.png",
+  "/assets/apple-touch-icon.png?v=3",
   "/assets/fonts/plus-jakarta-sans-latin.woff2",
   "/assets/fonts/plus-jakarta-sans-latin-ext.woff2"
 ];

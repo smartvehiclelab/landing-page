@@ -6,6 +6,6 @@ Contact: mailto:danilo.stoletovic@outlook.com
 Contact: https://danilostoletovic.com
 Expires: 2027-12-31T23:59:59.000Z
 Preferred-Languages: en, sr
-Canonical: https://yoloprojekat.com/.well-known/security.txt
-Policy: https://github.com/yoloprojekat/landing-page/security
-Acknowledgments: https://github.com/yoloprojekat/landing-page/graphs/contributors
+Canonical: https://smartvehicle.dev/.well-known/security.txt
+Policy: https://github.com/smartvehiclelab/landing-page/security
+Acknowledgments: https://github.com/smartvehiclelab/landing-page/graphs/contributors

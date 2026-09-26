@@ -1,13 +1,13 @@
 # agents.txt — Machine-Readable Autonomous AI Agent Policy & Manifest
 # Standardized Agent Capability and Permission Declaration
-# https://yoloprojekat.com/agents.txt
+# https://smartvehicle.dev/agents.txt
 
 User-agent: *
 Allow: /
 
 # Platform & Author Identification
 Site-Name: Smart Vehicle (Pametno Vozilo) — Autonomous Edge AI Platform
-Site-URL: https://yoloprojekat.com/
+Site-URL: https://smartvehicle.dev/
 Author: Danilo Stoletović
 Author-Website: https://danilostoletovic.com/
 Contact: mailto:danilo.stoletovic@outlook.com
@@ -19,9 +19,9 @@ Permissions: public-content-read
 Rate-Limit: 10 req/sec
 
 # Related Specifications & Knowledge Resources
-LLMs-Txt: https://yoloprojekat.com/llms.txt
-Security-Txt: https://yoloprojekat.com/.well-known/security.txt
-Sitemap: https://yoloprojekat.com/sitemap.xml
-Coding-Guidelines: https://yoloprojekat.com/AGENTS.md
-Repository: https://github.com/yoloprojekat/landing-page
-Organization: https://github.com/yoloprojekat
+LLMs-Txt: https://smartvehicle.dev/llms.txt
+Security-Txt: https://smartvehicle.dev/.well-known/security.txt
+Sitemap: https://smartvehicle.dev/sitemap.xml
+Coding-Guidelines: https://smartvehicle.dev/AGENTS.md
+Repository: https://github.com/smartvehiclelab/landing-page
+Organization: https://github.com/smartvehiclelab

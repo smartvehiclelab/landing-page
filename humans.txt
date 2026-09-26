@@ -20,8 +20,8 @@
   Typography: Plus Jakarta Sans (Self-hosted WOFF2)
   Performance: 100/100/100/100 Google PageSpeed Insights
   Hosting: Cloudflare Pages
-  Official Domain: https://yoloprojekat.com/
-  Landing Page Repository: https://github.com/yoloprojekat/landing-page
-  GitHub Organization: https://github.com/yoloprojekat
+  Official Domain: https://smartvehicle.dev/
+  Landing Page Repository: https://github.com/smartvehiclelab/landing-page
+  GitHub Organization: https://github.com/smartvehiclelab
   License: MIT License
   Last Updated: 2026-09-07

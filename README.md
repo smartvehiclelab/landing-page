@@ -2,18 +2,18 @@
 
 # 🌐 Smart Vehicle — Autonomous Edge AI Platform
 
+**Official website:** [smartvehicle.dev](https://smartvehicle.dev/) · **GitHub organization:** [smartvehiclelab](https://github.com/smartvehiclelab)
+
 ### _Modular Robotics Ecosystem for Real-Time On-Device Computer Vision_
 
 [![Edge Platform](https://img.shields.io/badge/Edge%20Device-Raspberry%20Pi%205-C51A4A?style=for-the-badge&logo=raspberrypi&logoColor=white)](https://www.raspberrypi.com/)
 [![Client Platform](https://img.shields.io/badge/Client-Android%20Platform-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://developer.android.com/)
 [![Language](https://img.shields.io/badge/Language-Kotlin%20%7C%20Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![Container](https://img.shields.io/badge/Infrastructure-Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
-[![Vision](https://img.shields.io/badge/Vision-YOLO%20%7C%20ML%20Kit-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)](https://github.com/yoloprojekat/model-pipeline)
+[![Vision](https://img.shields.io/badge/Vision-YOLO%20%7C%20ML%20Kit-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)](https://github.com/smartvehiclelab/model-pipeline)
 [![License: MIT](https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge)](LICENSE)
 
 <br><br>
-
-<img src="assets/website.png" alt="Smart Vehicle Official Website Preview" width="100%">
 
 <br><br>
 
@@ -57,19 +57,19 @@ graph TD
 The project codebase is partitioned into specialized repositories for optimal edge maintainability and continuous integration:
 
 ### ⚙️ Core & Infrastructure
-* **[rpi-server](https://github.com/yoloprojekat/rpi-server):** Primary containerized Python backend. Manages GPIO peripherals, executes **YOLO** real-time object detection inference, and distributes low-latency HTTP MJPEG video streams.
-* **[smart-network](https://github.com/yoloprojekat/smart-network):** Self-healing network service ensuring 100% vehicle uptime. Automatically spawns a localized fallback Hotspot whenever external Wi-Fi networks disconnect.
-* **[model-pipeline](https://github.com/yoloprojekat/model-pipeline):** Optimization and quantization pipeline (INT8/FP16) converting YOLO models to TFLite and ONNX formats for hardware-accelerated edge inference.
+* **[rpi-server](https://github.com/smartvehiclelab/rpi-server):** Primary containerized Python backend. Manages GPIO peripherals, executes **YOLO** real-time object detection inference, and distributes low-latency HTTP MJPEG video streams.
+* **[smart-network](https://github.com/smartvehiclelab/smart-network):** Self-healing network service ensuring 100% vehicle uptime. Automatically spawns a localized fallback Hotspot whenever external Wi-Fi networks disconnect.
+* **[model-pipeline](https://github.com/smartvehiclelab/model-pipeline):** Optimization and quantization pipeline (INT8/FP16) converting YOLO models to TFLite and ONNX formats for hardware-accelerated edge inference.
 
 ### 📱 Client Platform
-* **[android-client](https://github.com/yoloprojekat/android-client):** The official teleoperation and monitoring station built exclusively for the **Android platform** using Jetpack Compose and Kotlin. Delivers real-time holonomic touch control, live telemetry HUD, low-latency FPV video streaming, and on-device **Google ML Kit OCR** for roadway sign reading.
+* **[android-client](https://github.com/smartvehiclelab/android-client):** The official teleoperation and monitoring station built exclusively for the **Android platform** using Jetpack Compose and Kotlin. Delivers real-time holonomic touch control, live telemetry HUD, low-latency FPV video streaming, and on-device **Google ML Kit OCR** for roadway sign reading.
 
 <details>
 <summary><b>🏛️ Archived Modules & Prototypes</b></summary>
 <br>
 
-* **[rpi-server-legacy](https://github.com/yoloprojekat/rpi-server-legacy):** Early monolithic backend prototype based on Linux Systemd daemons.
-* **[landing-page-legacy](https://github.com/yoloprojekat/landing-page-legacy):** Predecessor landing page built on the Svelte framework.
+* **[rpi-server-legacy](https://github.com/smartvehiclelab/rpi-server-legacy):** Early monolithic backend prototype based on Linux Systemd daemons.
+* **[landing-page-legacy](https://github.com/smartvehiclelab/landing-page-legacy):** Predecessor landing page built on the Svelte framework.
 
 </details>
 
@@ -96,9 +96,9 @@ The project codebase is partitioned into specialized repositories for optimal ed
 
 ---
 
-## ⚡ Core Web Vitals & Performance
+## ⚡ Previous Performance Baseline
 
-The web presentation layer is built from the ground up for maximum speed, zero runtime overhead, and optimal SEO, scoring a perfect **100/100/100/100** across all Google PageSpeed Insights & Lighthouse audits:
+The screenshots below record the previous design’s Lighthouse results. They are historical results, not measurements of the current redesign. Run a fresh audit after deployment.
 
 | 📱 Mobile Web Vitals (100 / 100 / 100 / 100) | 🖥️ Desktop Web Vitals (100 / 100 / 100 / 100) |
 | :---: | :---: |
@@ -109,15 +109,15 @@ The web presentation layer is built from the ground up for maximum speed, zero r
 ## 🚀 Quick Start Guide
 
 ### 1. Android Client Setup
-1. Clone the [android-client](https://github.com/yoloprojekat/android-client) repository.
+1. Clone the [android-client](https://github.com/smartvehiclelab/android-client) repository.
 2. Open the project in **Android Studio** (Android 15 SDK / Ladybug+ recommended).
 3. Connect your Android device via USB debugging and deploy the application (`Run > Run 'app'`).
 
 ### 2. Edge Server Deployment (Raspberry Pi 5)
 1. SSH into your Raspberry Pi 5.
-2. Clone [rpi-server](https://github.com/yoloprojekat/rpi-server):
+2. Clone [rpi-server](https://github.com/smartvehiclelab/rpi-server):
    ```bash
-   git clone https://github.com/yoloprojekat/rpi-server.git
+   git clone https://github.com/smartvehiclelab/rpi-server.git
    cd rpi-server
    docker compose up -d
    ```
@@ -126,7 +126,7 @@ The web presentation layer is built from the ground up for maximum speed, zero r
 ### 3. Web Presentation Layer (Landing Page)
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yoloprojekat/landing-page.git
+   git clone https://github.com/smartvehiclelab/landing-page.git
    ```
 2. Open `index.html` directly in any modern browser (zero build steps, zero dependencies).
 
@@ -146,3 +146,16 @@ The web presentation layer is built from the ground up for maximum speed, zero r
 **ETŠ „Nikola Tesla“ Niš • 2026**
 
 </div>
+
+## Website maintenance
+
+The project site targets https://smartvehicle.dev. Domain/DNS setup and redirects from the former domain are deployment tasks.
+
+- `index.html`: project overview, architecture, hardware, gallery, repositories, history, and roadmap.
+- `style.css`: readable design system; keep `style.min.css` synchronized.
+- `script.js`: optional theme preference and service-worker registration; keep `script.min.js` synchronized. Navigation and project content need no JavaScript.
+- `404.html`: matching error page.
+- `sw.js`: offline cache. Increment its cache version whenever cached assets change.
+- All fonts and images are local. No package install or build is required.
+
+The visual direction uses warm paper, serif display type, rust accents, and numbered engineering notes. Existing AVIF project photographs and captures provide the visual evidence. Future autonomy work is explicitly described as planned.

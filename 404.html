@@ -1,237 +1,111 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#030712" />
-    <title>404: Telemetry Lost | Smart Vehicle</title>
-    <meta
-      name="description"
-      content="Autonomous Rover Out of Bounds. The requested resource does not exist or has been relocated in the Edge AI cluster."
-    />
-    <meta name="robots" content="noindex, follow" />
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://yoloprojekat.com/404.html" />
-    <meta property="og:title" content="404: Telemetry Lost | Smart Vehicle" />
-    <meta
-      property="og:description"
-      content="Autonomous Rover Out of Bounds. The requested resource does not exist in the Edge AI cluster."
-    />
-    <meta property="og:image" content="https://yoloprojekat.com/assets/nagrada.avif" />
-
-    <!-- Favicon & PWA Icons -->
-    <link rel="icon" type="image/png" href="assets/favicon.png" />
-    <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-    <link rel="manifest" href="site.webmanifest" />
-    <link rel="author" href="humans.txt" />
-
-    <!-- PWA Settings -->
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="Smart Vehicle" />
-
-    <!-- Local Font Preloads -->
-    <link
-      rel="preload"
-      href="assets/fonts/plus-jakarta-sans-latin.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-      fetchpriority="high"
-    />
-    <link
-      rel="preload"
-      href="assets/fonts/plus-jakarta-sans-latin-ext.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-      fetchpriority="high"
-    />
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.min.css" />
-
-    <!-- Anti-flicker Theme Script -->
-    <script>
-      (function () {
-        try {
-          var saved = localStorage.getItem("theme");
-          var pref = window.matchMedia("(prefers-color-scheme: dark)").matches
-            ? "dark"
-            : "light";
-          document.documentElement.setAttribute("data-theme", saved || pref);
-        } catch (e) {}
-      })();
-    </script>
-    <script src="script.min.js" defer></script>
-  </head>
-
-  <body>
-    <div
-      id="menu-overlay"
-      class="menu-overlay"
-      aria-label="Close menu"
-      hidden
-    ></div>
-
-    <header id="navbar" class="navbar">
-      <div class="nav-container">
-        <a href="/" class="logo" id="logo-btn" aria-label="Return to homepage">
-          <span class="logo-ring"></span>
-          <span class="logo-text">
-            <span class="logo-main">SMART</span>
-            <span class="logo-sub">VEHICLE</span>
-          </span>
-        </a>
-
-        <nav class="nav-links" id="main-nav" aria-label="Main Navigation">
-          <ul class="nav-list">
-            <li><a href="/#intro" class="nav-item">Overview</a></li>
-            <li><a href="/#awards" class="nav-item">Awards</a></li>
-            <li><a href="/#hardware" class="nav-item">Hardware</a></li>
-            <li><a href="/#software-logic" class="nav-item">Software</a></li>
-            <li><a href="/#projects" class="nav-item">Ecosystem</a></li>
-            <li><a href="/#gallery" class="nav-item">Gallery</a></li>
-          </ul>
-
-          <div class="nav-actions">
-            <button
-              id="theme-toggle"
-              class="theme-toggle"
-              aria-label="Toggle theme"
-            >
-              <svg
-                id="theme-icon"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></svg>
-            </button>
-            <a
-              href="https://github.com/yoloprojekat"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="github-cta"
-              >GitHub</a
-            >
-          </div>
-        </nav>
-
-        <button
-          id="mobile-toggle"
-          class="mobile-toggle"
-          aria-label="Toggle navigation menu"
-          aria-expanded="false"
-          aria-controls="main-nav"
-        >
-          <span id="hamburger" class="hamburger">
-            <span class="line-top"></span>
-            <span class="line-mid"></span>
-            <span class="line-bot"></span>
-          </span>
-        </button>
-      </div>
-    </header>
-
-    <main class="error-section">
-      <article class="error-card animate-fade-up">
-        <div class="error-badge">
-          <span class="error-pulse-dot" aria-hidden="true"></span>
-          <span>Telemetry Lost // Error 404</span>
-        </div>
-
-        <div class="error-code" aria-hidden="true">404</div>
-
-        <h1 class="error-title">Autonomous Rover Out of Bounds</h1>
-
-        <p class="error-desc">
-          The navigation computer cannot plot a trajectory to this endpoint.
-          The resource may have been relocated, deleted, or never indexed in the rover's memory map.
-        </p>
-
-        <div class="error-actions">
-          <a href="/" class="btn-primary" id="return-home-btn">
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-              <polyline points="9 22 9 12 15 12 15 22" />
-            </svg>
-            Return to Command Base
-          </a>
-          <a href="/#projects" class="btn-secondary" id="explore-ecosystem-btn">
-            Explore Ecosystem
-          </a>
-          <a href="/#hardware" class="btn-secondary" id="view-hardware-btn">
-            Hardware Specs
-          </a>
-        </div>
-
-        <div class="error-telemetry-grid">
-          <div class="telemetry-item">
-            <span class="telemetry-label">Status</span>
-            <span class="telemetry-value">OFF_GRID</span>
-          </div>
-          <div class="telemetry-item">
-            <span class="telemetry-label">Sector</span>
-            <span class="telemetry-value">0x00000194</span>
-          </div>
-          <div class="telemetry-item">
-            <span class="telemetry-label">Cluster</span>
-            <span class="telemetry-value">RPi5_ARM64</span>
-          </div>
-        </div>
-      </article>
-    </main>
-
-    <footer class="footer section-container">
-      <div class="footer-grid">
-        <div class="footer-left">
-          <div class="logo-text">
-            <span class="logo-main">SMART</span>
-            <span class="logo-sub">VEHICLE</span>
-          </div>
-          <div class="footer-credits">
-            <p>
-              Author:
-              <strong>Danilo Stoletović</strong>
-            </p>
-            <p class="author-website-line">
-              Author Website:
-              <a
-                href="https://danilostoletovic.com"
-                class="footer-website-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span>danilostoletovic.com</span>
-                <span class="external-icon" aria-hidden="true">↗</span>
-              </a>
-            </p>
-            <p>Mentor: <strong>Predrag Šubarević</strong></p>
-            <p class="special-thanks">
-              Special thanks to former mentor: <strong>Dejan Batanjac</strong>
-            </p>
-            <p class="school-info">ETŠ „Nikola Tesla“ Niš • 2026</p>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </body>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f5f2e8" />
+<title>Page not found | SmartVehicle</title>
+<meta
+name="description"
+content="A Raspberry Pi vehicle with YOLO vision, live video, and an Android control station. Explore the hardware, architecture, and open-source code."
+/>
+<meta
+name="keywords"
+content="Smart Vehicle, Edge AI, Raspberry Pi 5, YOLO, Computer Vision, Autonomous Robotics, Docker, Open Source, STEM"
+/>
+<meta name="author" content="Danilo Stoletović" />
+<link rel="author" href="https://danilostoletovic.com" />
+<meta name="robots" content="noindex, follow" />
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://smartvehicle.dev/404.html" />
+<meta property="og:title" content="SmartVehicle | Open-source robotics" />
+<meta
+property="og:description"
+content="Open-source Raspberry Pi robotics with YOLO vision and an Android control station."
+/>
+<meta property="og:image" content="https://smartvehicle.dev/assets/vozilo.avif" />
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content="https://smartvehicle.dev/404.html" />
+<meta name="twitter:title" content="SmartVehicle | Open-source robotics" />
+<meta
+name="twitter:description"
+content="Open-source Raspberry Pi robotics with YOLO vision and an Android control station."
+/>
+<meta name="twitter:image" content="https://smartvehicle.dev/assets/vozilo.avif" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png?v=3" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=3" />
+<link rel="manifest" href="site.webmanifest" />
+<link rel="author" href="humans.txt" />
+<!-- PWA Settings -->
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Smart Vehicle" />
+<!-- Local Font Preloads -->
+<link
+rel="preload"
+href="assets/fonts/plus-jakarta-sans-latin.woff2"
+as="font"
+type="font/woff2"
+crossorigin
+fetchpriority="high"
+/>
+<link
+rel="preload"
+href="assets/fonts/plus-jakarta-sans-latin-ext.woff2"
+as="font"
+type="font/woff2"
+crossorigin
+fetchpriority="high"
+/>
+<!-- Stylesheet -->
+<link rel="stylesheet" href="style.min.css" />
+<!-- Anti-flicker Theme Script -->
+<script>
+(function () {
+try {
+var saved = localStorage.getItem("theme");
+var pref = window.matchMedia("(prefers-color-scheme: dark)").matches
+? "dark"
+: "light";
+document.documentElement.setAttribute("data-theme", saved === "dark" || saved === "light" ? saved : pref);
+} catch (e) {}
+})();
+</script>
+<script src="script.min.js" defer>
+</script>
+<!-- Schema.org Structured Data -->
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="/#hero" aria-label="SmartVehicle home">smartvehicle<span>.</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="/#intro">The project</a>
+      <a href="/#software-logic">Engineering</a>
+      <a href="/#projects">Source code ↗</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch color theme" hidden>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </header>
+  <main id="main-content" class="wrap error-page">
+    <p class="eyebrow">404 / A WRONG TURN</p>
+    <h1>This route<br>ends here.</h1>
+    <p>The page you’re looking for may have moved. The vehicle, its engineering notes, and the source code are back at the project homepage.</p>
+    <div class="actions">
+      <a class="button" href="/">Back to SmartVehicle →</a>
+      <a href="https://github.com/smartvehiclelab">Find the code ↗</a>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <a class="wordmark" href="/#hero">smartvehicle<span>.</span>
+    </a>
+    <p>Built by <a href="https://danilostoletovic.com">Danilo Stoletović ↗</a>
+      <br>Open source · MIT license · 2026</p>
+    <a href="/#hero">Back to top ↑</a>
+  </footer>
+</body>
 </html>
