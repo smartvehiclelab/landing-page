@@ -17,7 +17,7 @@
 /* SITE */
   Standards: HTML5, Vanilla CSS3, Vanilla JavaScript, SVG, PWA (Service Worker, Web App Manifest)
   Architecture: Raspberry Pi 5, Ultralytics YOLOv8, Docker, Google ML Kit OCR, Jetpack Compose
-  Typography: Plus Jakarta Sans (Self-hosted WOFF2)
+  Typography: System fonts (system-ui, Georgia, Courier New)
   Performance: 100/100/100/100 Google PageSpeed Insights
   Hosting: Cloudflare Pages
   Official Domain: https://smartvehicle.dev/

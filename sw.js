@@ -1,10 +1,10 @@
 /**
  * Smart Vehicle (Pametno Vozilo) — Progressive Web App Service Worker
  * Zero runtime dependencies, high-performance offline shell & asset cache.
- * Cache Version: v2.1.0
+ * Cache Version: v2.1.1
  */
 
-const CACHE_NAME = "smart-vehicle-v2.1.0";
+const CACHE_NAME = "smart-vehicle-v2.1.1";
 
 const PRECACHE_ASSETS = [
   "/",
@@ -16,10 +16,7 @@ const PRECACHE_ASSETS = [
   "/assets/favicon.png?v=3",
   "/assets/icon-192.png",
   "/assets/icon-512.png",
-  "/assets/apple-touch-icon.png?v=3",
-  "/assets/fonts/plus-jakarta-sans-latin.woff2",
-  "/assets/fonts/plus-jakarta-sans-latin-ext.woff2"
-];
+  "/assets/apple-touch-icon.png?v=3",];
 
 // Install Event: Precache static app shell and activate worker immediately
 self.addEventListener("install", (event) => {

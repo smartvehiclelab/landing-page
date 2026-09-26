@@ -156,6 +156,6 @@ The project site targets https://smartvehicle.dev. Domain/DNS setup and redirect
 - `script.js`: optional theme preference and service-worker registration; keep `script.min.js` synchronized. Navigation and project content need no JavaScript.
 - `404.html`: matching error page.
 - `sw.js`: offline cache. Increment its cache version whenever cached assets change.
-- All fonts and images are local. No package install or build is required.
+- Typography uses system fonts; images are local. No package install or build is required.
 
 The visual direction uses warm paper, serif display type, rust accents, and numbered engineering notes. Existing AVIF project photographs and captures provide the visual evidence. Future autonomy work is explicitly described as planned.

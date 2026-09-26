@@ -1,21 +1,6 @@
 # Cloudflare Pages Custom HTTP Response Headers
 # https://developers.cloudflare.com/pages/configuration/headers/
 
-# Web Fonts - Allow cross-origin font fetching (CORS) and long-term caching
-/assets/fonts/*
-  Access-Control-Allow-Origin: *
-  Access-Control-Allow-Methods: GET, HEAD, OPTIONS
-  Access-Control-Allow-Headers: *
-  Content-Type: font/woff2
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.woff2
-  Access-Control-Allow-Origin: *
-  Access-Control-Allow-Methods: GET, HEAD, OPTIONS
-  Access-Control-Allow-Headers: *
-  Content-Type: font/woff2
-  Cache-Control: public, max-age=31536000, immutable
-
 # Cache CSS & JavaScript bundles
 /*.css
   Access-Control-Allow-Origin: *
